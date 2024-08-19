@@ -1,0 +1,55 @@
+{% extends 'base.html' %}c
+
+ 
+{% block title %}
+    Profile   
+            
+{% endblock title %}
+
+
+ 
+{% block head %}
+            
+     <h1>Enrollment Details</h1>  
+     
+     
+     
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 ">
+                    
+                    {% for message in messages %}
+                    <div class="alert-alert-{{message.tags}} alert-dismissible fade show" role="alert" style="color:white">
+                        <strong></strong>{{message}}
+                    <button type="button" class="btn-close" data-ts-dismiss="alert" aria-label="Close"></button>
+
+                    </div>
+                    {% endfor %}
+
+                    {% for post in posts %}
+
+                    <ul class="list-group">
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Name : {{post.FullName}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Email : {{post.Email}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Gender : {{post.Gender}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Mobile : {{post.Phonenumber}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">DOB : {{post.DOB}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Plan : {{post.SelectMembershipplan}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Tainer : {{post.SelectTrainer}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Refered by : {{post.Reference}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Address : {{post.Address}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">paymentStatus : {{post.paymentStatus}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Price : {{post.Price}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;"> Next DueDate : {{post.DueDate}}</li>
+                        <li class="list-group-item bg-white text-dark" style="font-weight:bold;">Joining Date : {{post.timeStamp}}</li>
+                      
+                     
+                    </ul>
+                     
+                      {% endfor %}
+                </div>
+                <div class="col-md-3"></div>
+                </div>
+                </div>
+                {% endblock head %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+ 
+{% block title %}
+      Signup      
+            
+{% endblock title %}
+
+
+ 
+{% block head %}
+            
+     <h1>Start Training Today</h1><br>
+     <h3 style="color:#ffc451;">join our gym and start your fitness jouney today!</h3>   
+     
+     
+     
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 ">
+                    
+                    {% for message in messages %}
+                    <div class="alert-alert-{{message.tags}} alert-dismissible fade show" role="alert" style="color:white">
+                        <strong></strong>{{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                    </div>
+                    {% endfor %}
+
+                <form action="/signup" method="post">{% csrf_token %}
+                    
+                   <div class="form-group"><h3 style="color:white;">Signup Here</h3> 
+                        <input type="number" class="form-control" name="usernumber" placeholder="Phone Number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control mt-2" name="email" placeholder="Email" required>
+                    </div>
+                    
+
+                    
+
+                    <div class="form-group">
+                        <input type="password" class="form-control mt-2" name="pass1" placeholder="Password" required>
+                    </div>
+                    <span id="passwordHelpInline" class="form-text" style="color:#ffc451;">
+                        Must be 8-20 characters long.
+                      </span>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control mt-2" name="pass2" placeholder="Confirm Password" required>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px;"> 
+                        <button class="btn btn-light" type="submit">Signup</button>
+                    </div>
+                    
+
+                </form>
+
+                 <br><a href="/login">Already User?</a>
+
+                </div>
+
+            </div>
+          
+
+{% endblock head %}
