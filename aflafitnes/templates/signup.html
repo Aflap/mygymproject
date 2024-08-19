@@ -10,8 +10,12 @@
  
 {% block head %}
             
+<<<<<<< HEAD
      <h1>Start Training Today</h1><br>
      <h3 style="color:#ffc451;">join our gym and start your fitness jouney today!</h3>   
+=======
+     <h1>Sign Up Here</h1>  
+>>>>>>> 16cbb510764dd0b8f235cbfe56437d1540422e70
      
      
      
@@ -29,8 +33,13 @@
                     {% endfor %}
 
                 <form action="/signup" method="post">{% csrf_token %}
+<<<<<<< HEAD
                     
                    <div class="form-group"><h3 style="color:white;">Signup Here</h3> 
+=======
+
+                   <div class="form-group">
+>>>>>>> 16cbb510764dd0b8f235cbfe56437d1540422e70
                         <input type="number" class="form-control" name="usernumber" placeholder="Phone Number" required>
                     </div>
 
@@ -44,7 +53,11 @@
                     <div class="form-group">
                         <input type="password" class="form-control mt-2" name="pass1" placeholder="Password" required>
                     </div>
+<<<<<<< HEAD
                     <span id="passwordHelpInline" class="form-text" style="color:#ffc451;">
+=======
+                    <span id="passwordHelpInline" class="form-text" style="color:rgb(245, 239, 239);">
+>>>>>>> 16cbb510764dd0b8f235cbfe56437d1540422e70
                         Must be 8-20 characters long.
                       </span>
 
